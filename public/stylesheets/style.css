@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: blue;
+}
+
+.thumbnail img {
+  max-height: 150px;
+}
+
+p{
+  color: steelblue;
+}
+
+.precio{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.h3v{
+  font-weight: bold;
+}
