@@ -12,6 +12,7 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
+var paypal = require('paypal-rest-sdk');
 
 //Rutas que llamamos
 var indexRouter = require('./routes/index');
@@ -20,6 +21,13 @@ var userRouter = require('./routes/users');
 
 
 var app = express();
+
+//onfiguracion de Paypal
+paypal.configure({
+  'mode': 'sandbox', //sandbox or live
+  'client_id': 'AdDcX7dENLLxfu4vMCz8_NPKNYedmxUbIJemSPdXFGGCsdyv3CodagS2s2aMMjEkCOPfUZ9aXpEDxvjr',
+  'client_secret': 'EDRBZk_UFvkFbbX6zUxgFgB-Kt6F9dGOTVViqznIES8Nd6GgL9rUAXvY8XpxuGHiKcUgABowoWziUcGo'
+});
 
 //Conexion de la DB MOngoDB
 var dbURI = 'mongodb://localhost:27017/tienda'; 
