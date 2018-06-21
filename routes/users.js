@@ -32,6 +32,7 @@ router.use('/', notLoggedIn, function(req,res,next){
 
 /* GET para el Crear de Sesion. */
 router.get('/signup', function (req, res, next) {
+  req.session.cart = null;
   var messages = req.flash('error');
   res.render('user/signup', { csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });
 });
@@ -40,6 +41,7 @@ router.get('/signup', function (req, res, next) {
 /* Post del Crear de Sesion. creamos la estrategia 
 para poder realizar la autenicacion y si existe datos del usuario */
 router.post('/signup', passport.authenticate('local.signup', {
+  
   successRedirect: '/user/perfil',
   failureRedirect: '/user/signup',
   failureFlash: true

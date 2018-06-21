@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+       <center> <h1>Pago de Tarjeta</h1></center>
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+        <form action="/cards" method="post">
+            <div class="form-group">
+                <label for="email"> Dirección de correo electrónico</label>
+                <input type="text" id="email" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="card"> Numero de Tarjeta</label>
+                <input type="number" id="card" name="card" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fecha"> Fecha de Expiracion</label>
+                <input type="date" id="fecha" name="fecha" class="form-control">
+            </div>
+              <div class="form-group">
+                <label for="cvv"> CVV2/CVC2</label>
+                <input type="text" id="cvv" name="cvv" class="form-control" maxlength="3">
+            </div>
+            
+            <center><button type="submit" class="btn btn-success"> <img width="138px" src="https://www.paypalobjects.com/webstatic/es_MX/mktg/logos-buttons/redesign/CI_btn_2.png" alt="Tarjeta PayPal"
+        /></button></center>
+        </form>
+    </div>
+</div>

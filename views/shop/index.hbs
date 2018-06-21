@@ -1,5 +1,30 @@
 <center>
-    <h1>PAGINA DE LOS PAGOS EN PAYPAL</h1>
+    {{# if flash}}
+    <div class="alert alert-danger">
+        <p>{{this.flash}}</p>
+    </div>
+    <div class="row">
+        <h3 class="h3v">Producto Vendido</h3>
+        <div class="clearfix">
+            <h5>Carrito N:</h3>
+                <p>{{data.shopping_cart_id}}</p>
+                <br>
+                <h5>Comprador:</h3>
+                    <p>{{data.email}}</p>
+                    <br>
+                    <h5>Total:</h3>
+                        <p><i class="fas fa-dollar-sign"></i> {{total}}</p>
+
+        </div>
+    </div>
+    <form action="/" method="get">
+    <button type="submit" class="btn btn-success">
+        <img width="138px" src="https://www.paypalobjects.com/webstatic/es_MX/mktg/logos-buttons/redesign/CI_btn_2.png" alt="Tarjeta PayPal"
+        />
+    </button>
+</form>
+    {{else}}
+    <h1>PAGINA DE LOS PAGOS EN PAYPAL </h1>
 </center>
 {{#each productos}}
 <div class="row">
@@ -11,7 +36,8 @@
                 <h3 class="h3v">{{this.titulo}}</h3>
                 <p>{{this.descripcion}}</p>
                 <div class="clearfix">
-                    <div class="precio pull-left"><i class="fas fa-dollar-sign"></i>  {{this.precio}}</div>
+                    <div class="precio pull-left">
+                        <i class="fas fa-dollar-sign"></i> {{this.precio}}</div>
                     <a href="/carrito/{{this._id}}" class="btn btn-success pull-right" role="button">
                         <i class="fas fa-money-bill"></i> Añadir al Carrito</a>
                 </div>
@@ -21,4 +47,4 @@
     {{/each}}
 </div>
 
-{{/each}}
+{{/each}} {{/if}}

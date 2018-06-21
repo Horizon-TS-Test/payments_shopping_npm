@@ -3,6 +3,7 @@ module.exports = function Cart(oldCart) {
     this.totalInd = oldCart.totalInd || 0;
     this.totalPrecio = oldCart.totalPrecio || 0;
     
+    
 
     this.add = function (item, id) {
         var storedItem = this.items[id];
@@ -13,6 +14,7 @@ module.exports = function Cart(oldCart) {
         storedItem.precio = storedItem.item.precio * storedItem.qty;
         this.totalInd++;
         this.totalPrecio += storedItem.item.precio;
+        
     };
     this.generateArray = function () {
         var arr = [];

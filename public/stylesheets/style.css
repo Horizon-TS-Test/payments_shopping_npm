@@ -23,3 +23,17 @@ p{
 .h3v{
   font-weight: bold;
 }
+nav {
+  overflow: hidden;
+  background:#444;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:valid {
+  border: 1px solid green;
+}
